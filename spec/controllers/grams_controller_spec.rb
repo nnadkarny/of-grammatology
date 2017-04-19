@@ -11,6 +11,7 @@ RSpec.describe GramsController, type: :controller do
       delete :destroy, params: { id: gram.id }
       expect(response).to have_http_status(:forbidden)
     end
+    
     it "shouldn't let unauthenticated users destroy a gram" do
       gram = FactoryGirl.create(:gram)
       delete :destroy, params: { id: gram.id }
